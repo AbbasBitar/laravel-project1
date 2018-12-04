@@ -73,7 +73,7 @@
       <button class="tasks__item__remove button alert pull-right"
               @click="$emit('remove')"
       >
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times"></i> Remove
       </button>
     </li>
 </template>
