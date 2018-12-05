@@ -10,66 +10,59 @@
 </head>
 <body>
 <style>
+
 body {
-  background-color: #abc;
+  background-color: lightblue;
 }
-*,
-h1,
+h1{
+  font-family: 'Verdana', sans-serif;
+}
 button {
-  font-family: 'Nunito', sans-serif;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
+  font-family: 'Verdana', sans-serif;
 }
 .tasks {
   width: 100%;
-  max-width: 45rem;
-  padding: 1em;
-  margin: 1em auto;
-  overflow: auto;
+  max-width: 720px;
+  padding: 32px;
+  margin: 32px auto;
+  overflow: hidden;
   background-color: #fff;
-  box-shadow: 0px 0.25rem 1rem rgba(0,0,0,0.25);
+  box-shadow: 0px 0.4px 16px rgba(0,0,0,0.25);
 }
 .tasks__list {
   clear: both;
 }
 .tasks__item {
-  margin-bottom: 0.5em;
+  margin-bottom: 16px;
   position: relative;
 }
 .tasks__item__toggle {
   cursor: pointer;
-  width: 100%;
+  width: auto;
   text-align: left;
-  padding: 0.85em 2.25em 0.85em 1em;
-  background-color: rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.1);
+  padding: 16px 32px 16px 16px;
+  background-color: white;
+  border: 1px solid black;
 }
 .tasks__item__toggle:hover {
   background-color: rgba(0,0,0,0.1);
-  border-color: rgba(0,0,0,0.15);
+  border-color: black;
 }
 .tasks__item__toggle--completed {
   text-decoration: line-through;
   background-color: rgba(0,128,0,0.15);
-  border-color: rgba(0,128,0,0.2);
+  border-color: black;
 }
 .tasks__item__toggle--completed:hover {
-  background-color: rgba(0,128,0,0.25);
-  border-color: rgba(0,128,0,0.3);
+  background-color:rgba(0,0,0,0.1);
+  border-color: black;
 }
 .tasks__item__remove {
   position: absolute;
   height: 100%;
   top: 50%;
   right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+
 }
 .tasks__item__remove i {
   vertical-align: middle;
@@ -82,8 +75,7 @@ button {
 <template id="task-list">
     <section class="tasks">
       <h1>
-        Tasks 
-        <transition name="fade">
+      My To Do List
           <small v-if="incomplete">(@{{ incomplete }})</small>
         </transition>
         
@@ -99,21 +91,21 @@ button {
           <button @click="addTask" 
                   class="button"
           >
-            <i class="fa fa-plus"></i> Add
+            <i></i> Add
           </button>
         </span>
       </div>
 
       <div class="tasks__clear button-group pull-right">
-        <button class="button warning small"
+        <button
                 @click="clearCompleted"
         >
-          <i class="fa fa-check"></i> Clear Completed
+          <i></i> Clear Completed
         </button>
-        <button class="button alert small"
+        <button
                 @click="clearAll"
         >
-          <i class="fa fa-trash"></i> Clear All
+          <i></i> Clear All
         </button>
       </div>
       
@@ -138,7 +130,7 @@ button {
       <button class="tasks__item__remove button alert pull-right"
               @click="$emit('remove')"
       >
-        <i class="fa fa-times"></i> Remove
+        <i></i> Remove
       </button>
     </li>
 </template>
